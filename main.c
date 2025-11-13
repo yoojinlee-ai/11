@@ -1,20 +1,29 @@
 #include <stdio.h>
 
-void change(char **p)
+#define TYPE_INT 0
+#define TYPE_CHAR 1
+#define TYPE_DOUBLE 2
+#define TYPE_FLOAT 3
+#define TYPE_STRING 4
+
+char typeNames[5][10] = {
+    "INT",
+    "CHAR",
+    "DOUBLE",
+    "FLOAT",
+    "STRING"
+};
+
+const char* getName(int type)
 {
-    *p = "All that glitters is not gold.";
+    return typeNames[type];
 }
 
 int main(void)
 {
-    char *str = "수정하려면 아무 키나 누르십시오...";
-
-    printf("%s\n", str);
-
-    change(&str);
-
-    printf("%s\n", str);
-
+    int i;
+    for (i = 0; i < 5; i++)
+        printf("%s\n", getName(i));
     return 0;
 }
 
