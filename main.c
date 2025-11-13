@@ -1,16 +1,20 @@
 #include <stdio.h>
 
+void change(char **p)
+{
+    *p = "All that glitters is not gold.";
+}
+
 int main(void)
 {
-    int i = 10;
-    int *p = &i;
-    int **p2 = &p;
+    char *str = "수정하려면 아무 키나 누르십시오...";
 
-    printf("i = %d\n", i);
-    printf("*p = %d\n", *p);
-    printf("**p2 = %d\n", **p2);
+    printf("%s\n", str);
+
+    change(&str);
+
+    printf("%s\n", str);
 
     return 0;
 }
-
 
