@@ -2,25 +2,13 @@
 
 int main(void)
 {
-    char *pc;
-    int *pi;
-    double *pd;
+    int i = 10;
+    int *p = &i;
+    int **p2 = &p;
 
-    char c = 'A';
-    int i = 10000;
-    double d = 3.14;
-
-    pc = &c;
-    pi = &i;
-    pd = &d;
-
-    printf("pc = %p, pi = %p, pd = %p\n", pc, pi, pd);
-
-    pc++;
-    pi++;
-    pd++;
-
-    printf("pc = %p, pi = %p, pd = %p\n", pc, pi, pd);
+    printf("i = %d\n", i);
+    printf("*p = %d\n", *p);
+    printf("**p2 = %d\n", **p2);
 
     return 0;
 }
